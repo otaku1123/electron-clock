@@ -4,3 +4,15 @@
 // `nodeIntegration` is turned off. Use `preload.js` to
 // selectively enable features needed in the rendering
 // process.
+
+let clockArea = document.getElementById('clock')
+
+const updateClock = () => {
+    const dt = new Date()
+    const hour = dt.getHours()
+    const min = dt.getMinutes()
+    const sec = dt.getSeconds()
+    clockArea.innerText = `${hour}:${min}:${sec}`
+}
+
+setInterval(updateClock, 100)
